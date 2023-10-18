@@ -102,9 +102,9 @@ fun CalcNumericButton(number: Int, display: MutableState<String>, onClick: () ->
             display.value += number.toString() // Append the selected number to the display
             onClick()
         },
-        modifier = Modifier.padding(8.dp)
+        modifier = Modifier.padding(4.dp) // Set padding to 4 dp
     ) {
-        Text(text = number.toString())
+        Text(text = number.toString()) // Use the number parameter value
     }
 }
 
