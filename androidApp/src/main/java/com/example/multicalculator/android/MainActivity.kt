@@ -62,6 +62,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    private fun CalcOperationButton(operation: String, onClick: () -> Unit) {
+        TODO("Not yet implemented")
+    }
+
     private fun CalcEqualsButton(onClick: () -> Unit) {
 
     }
@@ -75,9 +79,17 @@ fun CalcView() {
 fun CalcDisplay(calcView: Any) {
 
 }
-@composable
-fun CalcOperationButton(operation: String, function: () -> Unit) {
-
+@Composable
+fun CalcOperationButton(operation: String, display: MutableState<String>, onClick: () -> Unit) {
+    Button(
+        onClick = {
+            display.value += operation // Update the display with the selected operation
+            onClick()
+        },
+        modifier = Modifier.padding(8.dp)
+    ) {
+        Text(text = operation)
+    }
 }
 @composable
 fun CalcNumericButton(number: Int, function: () -> Unit) {
