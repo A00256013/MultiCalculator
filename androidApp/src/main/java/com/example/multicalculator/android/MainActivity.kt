@@ -86,9 +86,9 @@ fun CalcOperationButton(operation: String, display: MutableState<String>, onClic
             display.value += operation // Update the display with the selected operation
             onClick()
         },
-        modifier = Modifier.padding(8.dp)
+        modifier = Modifier.padding(4.dp) // Set padding to 4 dp
     ) {
-        Text(text = operation)
+        Text(text = operation) // Use the operation parameter value
     }
 }
 @composable
