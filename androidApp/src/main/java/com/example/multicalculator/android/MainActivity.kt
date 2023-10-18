@@ -88,9 +88,10 @@ fun CalcNumericButton(number: Int, function: () -> Unit) {
 fun CalcEqualsButton(display: MutableState<String>, onClick: () -> Unit) {
     Button(
         onClick = {
+            display.value = "0" // Set the display value to "0"
             onClick()
         },
-        modifier = Modifier.padding(8.dp)
+        modifier = Modifier.padding(4.dp) // Add padding of 4 dp
     ) {
         Text(text = "=")
     }
