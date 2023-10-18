@@ -75,11 +75,11 @@ fun CalcView() {
 fun CalcDisplay(calcView: Any) {
 
 }
-
+@composable
 fun CalcOperationButton(operation: String, function: () -> Unit) {
 
 }
-
+@composable
 fun CalcNumericButton(number: Int, function: () -> Unit) {
 
 }
