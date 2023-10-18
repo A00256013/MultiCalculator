@@ -62,6 +62,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    private fun CalcNumericButton(number: Int, onClick: () -> Unit) {
+        TODO("Not yet implemented")
+    }
+
     private fun CalcOperationButton(operation: String, onClick: () -> Unit) {
         TODO("Not yet implemented")
     }
@@ -91,9 +95,17 @@ fun CalcOperationButton(operation: String, display: MutableState<String>, onClic
         Text(text = operation) // Use the operation parameter value
     }
 }
-@composable
-fun CalcNumericButton(number: Int, function: () -> Unit) {
-
+@Composable
+fun CalcNumericButton(number: Int, display: MutableState<String>, onClick: () -> Unit) {
+    Button(
+        onClick = {
+            display.value += number.toString() // Append the selected number to the display
+            onClick()
+        },
+        modifier = Modifier.padding(8.dp)
+    ) {
+        Text(text = number.toString())
+    }
 }
 
 @Composable
