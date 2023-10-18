@@ -22,6 +22,9 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     GreetingView(Greeting().greet())
+
+                    // Call the CalcView function and display its result
+                    CalcDisplay(CalcView())
                 }
             }
         }
@@ -34,8 +37,19 @@ fun GreetingView(text: String) {
 }
 
 @Composable
+fun CalcView(): String {
+    // Perform your calculations or operations here
+    return "Calculations result"
+}
+
+@Composable
 fun CalcRow(value: String) {
     Text(text = value)
+}
+
+@Composable
+fun CalcDisplay(calculation: String) {
+    Text(text = calculation)
 }
 
 @Preview
